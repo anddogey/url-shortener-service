@@ -7,6 +7,7 @@ export class API {
         const app = express();
         const port = process.env.PORT || 80; // Specific to Heroku
         app.use(express.json());
+        app.use(express.urlencoded({ extended: true }));
         app.use(cors({ optionsSuccessStatus: 200 })); // Specific to freeCodeCamp projects
 
         app.get('/', (req, res) => {
