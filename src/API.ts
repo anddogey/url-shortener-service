@@ -16,6 +16,7 @@ export class API {
         let urls: string[] = [];
 
         app.post('/api/shorturl', (req, res) => {
+            console.log('Request body:', req.body);
             const originalUrl = req.body.original_url as string;
             const domainMatches = /^(?:https?:\/\/)?([a-zA-Z0-9\-\.]+)\/?/g.exec(originalUrl);
             if (!domainMatches || !domainMatches.length) {
